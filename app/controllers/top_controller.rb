@@ -1,3 +1,4 @@
+
 #test
 
 class TopController < ApplicationController
@@ -26,4 +27,6 @@ class TopController < ApplicationController
   def destroy
   end
 
+  def about
+  end
 end

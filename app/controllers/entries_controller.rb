@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
+  #投稿一覧
   def index
+   @entries = Entry.order("number")
   end
 
   def search
@@ -22,5 +24,5 @@ class EntriesController < ApplicationController
 
   def destroy
   end
-  
+
 end

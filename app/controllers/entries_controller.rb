@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
   #投稿一覧
   def index
-   @entries = Entry.order("number")
+   @entries = Entry.order("entrynumber")
   end
 
   def search
@@ -10,10 +10,13 @@ class EntriesController < ApplicationController
   def show
   end
 
+  #新規投稿
   def new
+    @entries = Entry.new
   end
 
   def edit
+    @entries = Entry.find(params[:id])
   end
 
   def create

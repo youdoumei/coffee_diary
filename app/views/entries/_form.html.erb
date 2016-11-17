@@ -1,10 +1,23 @@
 <%= form_for @entry do |form| %>
-投稿ナンバー:<%= form.text_field :entrynumber %>
-指標テンプレート:<%= form.text_field :scale_templatenumber %>
-コメント:<%= form.text_field :comment %>
-投稿日:<%= form.text_field :entrydate%>
-評価1:苦味:<%= form.text_field :value1 %>
-評価2:香り:<%= form.text_field :value2 %>
-評価3:酸味:<%= form.text_field :value3 %>
-評価4:コク:<%= form.text_field :value4 %>
+<% options = ["1","2","3","4","5"] %>
+
+<br>投稿ナンバー</br>
+<%= form.text_field :entrynumber %>
+
+<br>指標テンプレート</br>
+<%= form.text_field :scale_templatenumber %>
+
+<br>コメント</br>
+<%= form.text_area :comment, cols: 40, rows: 6%>
+<tr>
+<br>投稿日</br>
+<%= form.date_select :entrydate%>
+</tr>
+<br>
+苦味 <%= form.select :value1, options %>
+香り <%= form.select :value2, options %>
+酸味 <%= form.select :value3, options %>
+コク <%= form.select :value4, options %>
+</br>
+
 <% end %>

@@ -32,4 +32,10 @@
   <td style="text-align: right"><%= entry.value4 %></td>
 </tr>
 </table>
+<td><%= link_to entry.entrynumber, entry %></td>
+
+<td>
+  <%= link_to "編集", [:edit, entry] %>
+  <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか?"} %>
+</td>
 <% end %>

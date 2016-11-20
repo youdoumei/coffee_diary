@@ -8,6 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @entries = Entry.find(params[:entry])
   end
 
   #新規投稿
@@ -20,6 +21,12 @@ class EntriesController < ApplicationController
   end
 
   def create
+    @entries = Entry.new(params[:entry])
+     if @entries.save
+       redirect_to @entries, notice: "投稿しました。"
+     else
+       render "new"
+     end
   end
 
   def update

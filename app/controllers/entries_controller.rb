@@ -8,7 +8,7 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entries = Entry.find(params[:id])
+    @entry = Entry.find(params[:id])
   end
 
   #新規投稿

@@ -1,9 +1,41 @@
 
 <% @page_title = "投稿一覧" %>
 <h1><%= @page_title %></h1>
-
+<% if @entries.present? %>
    <% @entries.each do |entry| %>
    <% end %>
 
 <p><%= link_to "新規投稿", :new_entry %><p>
 
+
+<table class="list" >
+  <tr>
+     <th> 投稿ナンバー</th>
+     <th> 指標テンプレート</th>
+     <th> コメント</th>
+     <th> 投稿日</th>
+     <th> 苦味</th>
+     <th> 香り</th>
+     <th> 酸味 </th>
+     <th> コク </th>
+     </tr>
+<% end %>
+ <% @entries.each do |entry| %>
+<tr>
+  <td style="text-align: right"><%= entry.entrynumber %></td>
+  <td style="text-align: right"><%= entry.scale_templatenumber %></td>
+  <td style="text-align: right"><%= entry.comment %></td>
+  <td style="text-align: right"><%= entry.entrydate %></td>
+  <td style="text-align: right"><%= entry.value1 %></td>
+  <td style="text-align: right"><%= entry.value2 %></td>
+  <td style="text-align: right"><%= entry.value3 %></td>
+  <td style="text-align: right"><%= entry.value4 %></td>
+</tr>
+</table>
+<td><%= link_to entry.entrynumber, entry %></td>
+
+<td>
+  <%= link_to "編集", [:edit, entry] %>
+  <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか?"} %>
+</td>
+<% end %>

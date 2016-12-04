@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :entries do
     collection { get "search" }
+
+  resource :session, only: [:create, :destroy]
   end
 
   #テストテストテスト

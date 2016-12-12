@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   resource :session do
   end
+  resources :users do
+  end
 
   #テストテストテスト
   # The priority is based upon order of creation: first created -> highest priority.

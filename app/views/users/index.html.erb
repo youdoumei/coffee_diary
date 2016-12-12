@@ -1,0 +1,16 @@
+<% @page_title = "ユーザー一覧" %>
+<h1><%= @page_title %></h1>
+
+<% if @users.present? %>
+<table class= "list">
+  <tr>
+    <th>ユーザー名</th>
+    <th>パスワード</th>
+  </tr>
+  <% @users.each do |user| %>
+  <% end %>
+</table>
+
+<% else %>
+<p>会員情報がありません。</p>
+<% end %> 

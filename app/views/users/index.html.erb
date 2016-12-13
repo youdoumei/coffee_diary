@@ -1,16 +1,28 @@
 <% @page_title = "ユーザー一覧" %>
 <h1><%= @page_title %></h1>
-
+<p><%= link_to "ユーザー登録", :new_user %></p>
 <% if @users.present? %>
 <table class= "list">
   <tr>
     <th>ユーザー名</th>
     <th>パスワード</th>
   </tr>
+
   <% @users.each do |user| %>
+ <tr>
+   <td style="text-align: right"><%= user.name %></td>
+   <td style="text-align: right"><%= user.password %></td>
+ </tr>
+
+  <td>
+    <%= link_to "編集", [:edit, user]%>|
+    <%= link_to "削除", user, method: :delete,
+          data: { confirm: "本当に削除しますか?"} %>
+  </td>
   <% end %>
 </table>
 
 <% else %>
 <p>会員情報がありません。</p>
-<% end %> 
+
+<% end %>

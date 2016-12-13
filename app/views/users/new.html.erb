@@ -1,0 +1,12 @@
+<% @page_title = "ユーザー新規登録" %>
+<h1><%= @page_title %></h1>
+
+<% @user = User.new unless @user %>
+<%= form_for @user do |form| %>
+
+<br>ユーザー名<%= form.text_field :name ,size: 16 %></br>
+
+<br>パスワード<%= form.password_field :password ,size: 12 %></br>
+
+<p><%= form.submit %></p>
+<% end %>

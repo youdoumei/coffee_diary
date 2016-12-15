@@ -1,5 +1,5 @@
 <h2>ログイン</2>
-
+<% if flash.alert %><p class="alart"><%= flash.alert %></p><% end %>
 <%= form_tag :session do %>
 <table id ="login_form">
   <tr>

@@ -9,6 +9,9 @@
 <br>ユーザー名<%= form.text_field :name ,size: 16 %></br>
 
 <br>パスワード<%= form.password_field :password ,size: 12 %></br>
+<br>パスワードの確認<%= form.password_field :password_confirmation ,size: 12 %></br>
+<% unless @user.new_record? %>
+<p>パスワードを変更しないときは、パスワード入力欄を空にしてください。</p>
 
 <p><%= form.submit %></p>
 <% end %>

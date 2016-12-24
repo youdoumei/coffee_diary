@@ -9,15 +9,22 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    if params[:format].in?(["jpg", "png", "gif"])
+      send_picture
+    else
+      render "show"
+    end
   end
 
   #新規投稿
   def new
-    @entries = Entry.new
+    @entry = Entry.new
+    @entry.build_picture
   end
 
   def edit
-    @entries = Entry.find(params[:id])
+    @entry = Entry.find(params[:id])
+    #@entry.build_picture unless @entry.imgae
   end
 
   def create
@@ -35,4 +42,21 @@ class EntriesController < ApplicationController
   def destroy
   end
 
+  private
+  def entry_params
+    atts = [:entrynumber, :scale_templatenumber, :comment, :entrydate, :value1, :value2, :value3, :value4]
+    atts << { picture_attributes: [:_destroy, :id, :uploaded_picture] }
+    params.require(:entry).permit(atts)
+  end
+
+
+  #画像送信
+  def send_picture
+    if @entry.picture.present?
+      send_data @entry.picture.data,
+        type: @entry.picture.content_type, disposition: "inline"
+    else
+      raise NotFound
+    end
+  end
 end

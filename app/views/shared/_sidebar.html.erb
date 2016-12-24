@@ -4,8 +4,6 @@
 <br>
 <%= render"shared/login_form" unless current_user %>
 </br>
-<% if current_user %>
 <br><%= menu_link_to "投稿", "entries/new" %></br>
 <br><%= menu_link_to "ユーザー","users" %></br>
-<% end %>
 </div>

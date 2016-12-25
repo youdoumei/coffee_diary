@@ -4,7 +4,7 @@ class Picture < ActiveRecord::Base
   attr_reader :uploaded_picture
 
   PICTURE_TYPES =
-   { "picture/jpeg" => "jpeg", "picture/gif" => "gif", "picture/png" => "png" }
+   { "picture/jpeg" => "jpg", "picture/gif" => "gif", "picture/png" => "png" }
 
   def extension
     PICTURE_TYPES[content_type]
@@ -20,7 +20,7 @@ class Picture < ActiveRecord::Base
   def convert_content_type(ctype)
     ctype = ctype.rstrip.downcase
     case ctype
-      when "picture/jepeg" then "picture/jpeg"
+      when "picture/pjpeg" then "picture/jpeg"
       when "picture/jpg" then "picture/jpeg"
       when "picture/x-png" then "picture/png"
       else ctype

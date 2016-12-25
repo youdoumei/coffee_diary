@@ -3,9 +3,20 @@
 
 <br>写真</br>
 <%= form.fields_for :picture do |imgf| %>
-<%= "test" %>
-<%= imgf.file_field :uploaded_picture %>
-<% end %>
+<tr>
+  <%= imgf.label :uploaded_picture %>
+  <td>
+    <%= imgf.file_field :uploaded_picture %>
+    <if !imgf.object.new_record? && imgf.object.errors.empty? %>
+      <div>
+        <%= entry_picture_tag @entry, width: 60 %>
+        <%= imgf.check_box :_destroy %>
+        <%= imgf.label :_destory %>
+        <%= imgf.hidden_field :id %>
+      </div>
+      <% end %>
+    </td>
+</tr>
 
 <br>投稿ナンバー</br>
 <%= form.text_field :entrynumber %>

@@ -1,21 +1,11 @@
 <table class="attr">
 <%= form_for @entry do |form| %>
+
 <br>写真</br>
 <%= form.fields_for :picture do |imgf| %>
-<tr>
-  <th><%= imgf.label :uploaded_picture %></th>
-  <td>
-    <%= imgf.file_field :uploaded_picture %>
-    <if !imgf.object.new_record? && imgf.object.errors.empty? %>
-      <div>
-        <%= entry_picture_tag @entry, width: 60 %>
-        <%= imgf.check_box :_destroy %>
-        <%= imgf.label :_destory %>
-        <%= imgf.hidden_field :id %>
-      </div>
-      <% end %>
-    </td>
-</tr>
+<%= "test" %>
+<%= imgf.file_field :uploaded_picture %>
+<% end %>
 
 <br>投稿ナンバー</br>
 <%= form.text_field :entrynumber %>

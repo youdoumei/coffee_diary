@@ -7,11 +7,11 @@ class Picture < ActiveRecord::Base
    { "picture/jpeg" => "jpeg", "picture/gif" => "gif", "picture/png" => "png" }
 
   def extension
-    picture_TYPES[content_type]
+    PICTURE_TYPES[content_type]
   end
 
   def uploaded_picture=(picture)
-    self.content_type = convert_content_type(picture_type)
+    self.content_type = convert_content_type(picture.content_type)
     self.data = picture.read
     @uploaded_picture = picture
   end

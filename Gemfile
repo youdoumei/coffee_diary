@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'io-console'
 
+gem 'paperclip'
+
 gem 'tzinfo-data'
 #gem 'therubyracer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

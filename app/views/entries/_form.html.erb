@@ -1,22 +1,9 @@
 <table class="attr">
-<%= form_for @entry do |form| %>
+<%= form_for @entry, html: {multipart: true} do |form| %>
 
 <br>写真</br>
-<%= form.fields_for :picture do |imgf| %>
-<tr>
-  <%= imgf.label :uploaded_picture %>
-  <td>
-    <%= imgf.file_field :uploaded_picture %>
-    <if !imgf.object.new_record? && imgf.object.errors.empty? %>
-      <div>
-        <%= entry_picture_tag @entry, width: 60 %>
-        <%= imgf.check_box :_destroy %>
-        <%= imgf.label :_destory %>
-        <%= imgf.hidden_field :id %>
-      </div>
-      <% end %>
-    </td>
-</tr>
+<%= form.file_field :photo %>
+
 
 <br>投稿ナンバー</br>
 <%= form.text_field :entrynumber %>
@@ -32,7 +19,7 @@
 <%= form.date_select :entrydate%>
 </tr>
 <br>
-<% options = ["1","2","3","4","5"] %>
+<% options = 1..5 %>
 苦味 <%= form.select :value1, options %>
 香り <%= form.select :value2, options %>
 酸味 <%= form.select :value3, options %>

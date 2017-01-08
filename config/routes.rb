@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   resources :entries do
     collection { get "search" }
   end
-  resource :session do
-  end
-  resources :users do
-  end
+  resource :session
+  resources :users
 
   #テストテストテスト
   # The priority is based upon order of creation: first created -> highest priority.

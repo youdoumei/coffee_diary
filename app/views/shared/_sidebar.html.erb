@@ -7,13 +7,10 @@
 <% if current_user %>
 <br><%= menu_link_to "投稿", "entries/new" %></br>
 <br><%= menu_link_to "ユーザー","users" %></br>
-<% end %>
-<% if current_user %>
 <P class= "user">
 <%= current_user.name %> さん
 <%= link_to "ログアウト", :session,
       method: :delete, data: { confirm: "ログアウトしますか?"} %>
 </p>
-
 <% end %>
 </div>

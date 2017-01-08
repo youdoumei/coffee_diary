@@ -28,8 +28,8 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(params[:entry])
-    raise @entry.picture.inspect
+
+    @entry = Entry.new(entry_params)
      if @entry.save
        redirect_to entries_path, notice: "投稿しました。"
      else

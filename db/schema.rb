@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225035140) do
+ActiveRecord::Schema.define(version: 20170102123958) do
 
   create_table "entries", force: :cascade do |t|
     t.integer  "entrynumber",          null: false
@@ -27,11 +27,16 @@ ActiveRecord::Schema.define(version: 20161225035140) do
   end
 
   create_table "pictures", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "entry_id"
     t.binary   "data"
     t.string   "content_typet"
+    t.string   "content_type"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "pictures", ["entry_id"], name: "index_pictures_on_entry_id"

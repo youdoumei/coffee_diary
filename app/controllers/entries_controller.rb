@@ -28,7 +28,6 @@ class EntriesController < ApplicationController
   end
 
   def create
-
     @entry = Entry.new(entry_params)
      if @entry.save
        redirect_to entries_path, notice: "投稿しました。"
@@ -46,7 +45,7 @@ class EntriesController < ApplicationController
   private
   def entry_params
     atts = [:entrynumber, :scale_templatenumber, :comment, :entrydate, :value1, :value2, :value3, :value4]
-    atts << { picture_attributes: [:_destroy, :id, :uploaded_picture] }
+    atts << { picture_attributes: [:_destroy, :id, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at] }
     params.require(:entry).permit(atts)
   end
 

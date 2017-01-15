@@ -2,8 +2,12 @@
 <%= form_for @entry, html: {multipart: true} do |form| %>
 
 <br>写真</br>
-<%= form.file_field :photo %>
-
+<div class="field">
+<%= form.fields_for :picture do |imgf| %>
+  <th><%= imgf.label :photo %></th>
+      <%= imgf.file_field :photo %>
+<% end %>
+</div>
 
 <br>投稿ナンバー</br>
 <%= form.text_field :entrynumber %>

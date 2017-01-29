@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'io-console'
 
-gem 'paperclip'
+gem 'paperclip','~> 5.0.0'
 
 gem 'tzinfo-data'
 #gem 'therubyracer'

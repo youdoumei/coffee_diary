@@ -3,7 +3,7 @@
 
 <br>写真</br>
 <div class="field">
-<%= form.fields_for :picture do |imgf| %>
+<%= form.fields_for :images, @entry.images.build do |imgf| %>
   <th><%= imgf.label :photo %></th>
       <%= imgf.file_field :photo %>
 <% end %>

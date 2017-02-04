@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @image.name %>
+</p>
+<p>
+   <strong>Image:</strong>
+   <!--- Modelのstyleで指定した :midium など渡すことでサイズを指定できる -->
+   <%= image_tag @image.photo.url(:medium) %>
+</p>
+<!-- 追加箇所 終了-->
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

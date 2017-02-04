@@ -1,9 +1,9 @@
 <table class="attr">
-<%= form_for @entry, html: {multipart: true} do |form| %>
+<%= form_for @entry do |form| %>
 
 <br>写真</br>
 <div class="field">
-<%= form.fields_for :picture do |imgf| %>
+<%= form.fields_for :images, @entry.images.build do |imgf| %>
   <th><%= imgf.label :photo %></th>
       <%= imgf.file_field :photo %>
 <% end %>

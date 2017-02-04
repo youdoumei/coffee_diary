@@ -27,14 +27,13 @@
   <td style="text-align: right"><%= entry.value2 %></td>
   <td style="text-align: right"><%= entry.value3 %></td>
   <td style="text-align: right"><%= entry.value4 %></td>
-     <!--- Modelのstyleで指定した :midium など渡すことでサイズを指定できる -->
-  <% unless entry.picture == nil %>
-    <td style="text-align: right"><%= image_tag entry.picture.photo.url(:medium) %></td>
-  <% end %>
-</tr>
-</table>
-<!---<td><%= link_to entry.entrynumber, entry %></td> -->
 
+<p>
+   <strong>Image:</strong>
+   <!--- Modelのstyleで指定した :midium など渡すことでサイズを指定できる -->
+   <%= image_tag entry.images.first %>
+</p>
+<!-- 追加箇所 終了-->
 <td>
   <%= link_to "編集", [:edit, entry] %>
   <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか?"} %>

@@ -34,9 +34,6 @@
    <%= image_tag entry.images.first %>
 </p>
 <!-- 追加箇所 終了-->
-
-
-
 <td>
   <%= link_to "編集", [:edit, entry] %>
   <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか?"} %>

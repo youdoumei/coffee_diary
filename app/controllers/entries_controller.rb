@@ -45,8 +45,8 @@ class EntriesController < ApplicationController
   private
   def entry_params
     atts = [:entrynumber, :scale_templatenumber, :comment, :entrydate, :value1, :value2, :value3, :value4]
-    atts << { image_attributes: [:_destroy, :id, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at] }
-    params.require(:entry).permit(atts, :photo)
+    atts << { image_attributes: [:_destroy, :id, :photo] }
+    params.require(:entry).permit(atts)
   #picture_attributes
   end
 

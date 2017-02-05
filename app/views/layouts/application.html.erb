@@ -5,18 +5,19 @@
   <title><%= page_title %></title>
 
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
 </head>
 <body>
   <div id="container">
     <div id="header">
       <%= render "shared/header" %>
     </div>
-    <div id="content">
-      <%= yield %>
-    </div>
-    <div id="sidebar">
-      <%= render "shared/sidebar" %>
-    </div>
+  </div>
+  <div id="sidebar">
+    <%= render "shared/sidebar" %>
+  </div>
+  <div id="content">
+    <%= yield %>
   </div>
 </body>
 </html>

@@ -1,9 +1,9 @@
-
 <% @page_title = "投稿一覧" %>
-<h1><%= @page_title %></h1>
 <% if @entries.present? %>
    <% @entries.each do |entry| %>
 <% end %>
+
+<h1><%= @page_title %></h1>
 
 <table class="list" >
   <tr>
@@ -27,7 +27,7 @@
   <td style="text-align: right"><%= entry.value2 %></td>
   <td style="text-align: right"><%= entry.value3 %></td>
   <td style="text-align: right"><%= entry.value4 %></td>
-  <td style="text-align: right"><%=image_tag entry.image.try(:photo) %></td>
+  <td style="text-align: right"><%= image_tag entry.image.try(:photo), class: 'img_size' %></td>
 <!---<p>
    <strong>Image:</strong>
     Modelのstyleで指定した :midium など渡すことでサイズを指定できる

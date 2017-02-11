@@ -13,11 +13,11 @@
       <%= render "shared/header" %>
     </div>
   </div>
-  <div id="sidebar">
+  <block id="sidebar">
     <%= render "shared/sidebar" %>
-  </div>
-  <div id="content">
+  </block>
+  <block id="content">
     <%= yield %>
-  </div>
+  </block>
 </body>
 </html>

@@ -1,8 +1,8 @@
 <%= form_for @entry do |form| %>
 <div id="entries_new">
-  <br>写真</br>
+<!---<br>写真</br>-->
     <%= form.fields_for :image, @entry.build_image do |imgf| %>
-      <th><%= imgf.label :photo %></th>
+      <th><%= imgf.label :写真 %></th>
         <%= imgf.file_field :photo %>
     <% end %>
   <br>投稿ナンバー</br>
@@ -14,8 +14,8 @@
   <br>コメント</br>
   <%= form.text_area :comment, cols: 40, rows: 6%>
   <tr>
-  <br>投稿日</br>
-  <%= form.date_select :entrydate%>
+  <br>投稿日
+  <%= form.date_select :entrydate%></br>
   </tr>
   <br>
   <% options = 1..5 %>

@@ -7,14 +7,10 @@
 
 <table class="list" >
   <tr>
-     <th> 投稿ナンバー</th>
+     <th> No.</th>
      <th> 指標テンプレート</th>
-     <th> コメント</th>
-     <th> 投稿日</th>
-     <th> 苦味</th>
-     <th> 香り</th>
-     <th> 酸味 </th>
-     <th> コク </th>
+     <th> Commnet</th>
+     <th> Date</th>
   </tr>
 <% end %>
  <% @entries.each do |entry| %>
@@ -23,9 +19,13 @@
   <td style="text-align: right"><%= entry.scale_templatenumber %></td>
   <td style="text-align: right"><%= entry.comment %></td>
   <td style="text-align: right"><%= entry.entrydate %></td>
-  <td style="text-align: right"><%= entry.value1 %></td>
+  <th>苦味</th>
+  <td style="text-align: right"><%=entry.value1%></td>
+  <th>香り</th>
   <td style="text-align: right"><%= entry.value2 %></td>
+  <th>酸味</th>
   <td style="text-align: right"><%= entry.value3 %></td>
+  <th>コク</th>
   <td style="text-align: right"><%= entry.value4 %></td>
   <td style="text-align: right"><%= image_tag entry.image.try(:photo), class: 'img_size' %></td>
 <!---<p>

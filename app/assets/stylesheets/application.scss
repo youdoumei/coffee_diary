@@ -1,0 +1,104 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+ /* ページ全体 */
+ /*============================================
+ 全般的なスタイル
+ ============================================*/
+ * {
+ 	margin:10; padding:0; 	/*全要素のマージン・パディングをリセット*/
+ 	line-height:1;	/*全要素の行の高さを1倍にする*/
+ 	color:#333333;		/*文字色*/
+
+ }
+ body {
+ 	background-color:white;	/*ページ全体の背景色*/
+ 	/*text-align:center;		/*IE6以下でセンタリングするための対策*/
+ }
+ #content {
+	display: inline-block;
+ 	/*width:796px; margin:0 auto;	/*内容全体をセンタリング*/
+ 	text-align:left;	/*テキストの配置を左揃えにする*/
+ 	background-image:url("images/bg_pagebody.gif");	/*内容全体の背景*/
+ 	background-repeat:repeat-y;		/*背景画像を縦方向に繰り返す*/
+ 	background-color:#ffffff;		/*内容全体の背景色*/
+ }
+ h1 {
+  display: inline-block;
+  padding:20px 20px 0px 30px;		/*見出し内容の位置調整*/
+  font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+ }
+
+ /*============================================
+ サイドバー
+ ============================================*/
+ #sidebar {
+	display: inline-block;
+ 	height:77px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+ 	background-image:url("images/bg_header.jpg");	/*サイドバー部分の背景画像*/
+ 	background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+ 	background-color:white;		/*サイドバー部部分の背景色*/
+  vertical-align: top
+ }
+ h1 {
+ 	padding:20px 20px 0px 30px;		/*見出し内容の位置調整*/
+ 	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+ }
+ h1 a {text-decoration:none;} 			/*リンクの下線を無くす*/
+
+
+/*============================================
+ヘッダ
+/*============================================*/
+/*div#header {
+/*	height:77px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+/*	background-image:url("images/bg_header.jpg");	/*ヘッダ部分の背景画像*/
+/*	background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+/*	background-color:#cccccc;		/*ヘッダ部分の背景色*/
+/*}
+/*h1 {
+/*	padding:20px 0px 0px 30px;		/*見出し内容の位置調整*/
+/*	font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+/*}
+/*h1 a {text-decoration:none;} 			/*リンクの下線を無くす*/
+/*============================================
+投稿一覧
+/*============================================*/
+.list {
+ display: inline-block;
+ background-image:url("images/bg_header.jpg");	/*サイドバー部分の背景画像*/
+ background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+ background-color:white;		/*サイドバー部部分の背景色*/
+ width:1100px
+}
+h1 {
+ padding:0px 0px 0px 0px;		/*見出し内容の位置調整*/
+ font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}
+h1 a {text-decoration:none;} 			/*リンクの下線を無くす*/
+
+.comment{
+	width: 100px;
+}
+
+.img_size {
+	width: 300px;
+}
+/*============================================
+新規投稿
+/*============================================*/
+div#entries_new {
+ display: inline-block;
+ height:77px;	/*背景画像のサイズに合わせてボックスの高さを指定*/
+ background-image:url("images/bg_header.jpg");	/*サイドバー部分の背景画像*/
+ background-repeat:no-repeat;		/*背景画像を繰り返さない*/
+ background-color:white;		/*サイドバー部部分の背景色*/
+}
+
+h1 {
+ display: block;
+ padding:0px 0px 0px 0px;		/*見出し内容の位置調整*/
+ font-family:Arial, Helvetica, sans-serif;	/*フォントの種類*/
+}
+h1 a {text-decoration:none;} 			/*リンクの下線を無くす*/

@@ -1,9 +1,9 @@
 <div class="sidebar">
   <br><%= menu_link_to "TOP", root_path %></br>
   <br><%= menu_link_to "投稿一覧", "entries" %></br>
-  <% if current_user %>
   <br><%= menu_link_to "投稿", "entries/new" %></br>
-  <br<%= render"shared/login_form" unless current_user %></br>
+  <% if current_user %>
+  <br><%= render "shared/_login_form" unless current_user %></br>
   <br><%= menu_link_to "ユーザー情報","users" %></br>
   <P class= "user">
     <%= current_user.name %> さん

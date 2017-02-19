@@ -1,7 +1,7 @@
 <% @page_title = "ユーザー編集" %>
-<h1><%= @page_title %></h1>
+<h2><%= @page_title %></h2>
 
-<p><%= link_to "ユーザー情報一覧", @users %></p>
+<h2><%= link_to "ユーザー情報一覧", @users %></h2>
 
 <% @user = User.edit unless @user %>
 <%= form_for @user do |form| %>

@@ -3,12 +3,13 @@
   <br><%= menu_link_to "投稿一覧", "entries" %></br>
   <br><%= menu_link_to "投稿", "entries/new" %></br>
   <% if current_user %>
-  <br><%= render "shared/_login_form" unless current_user %></br>
   <br><%= menu_link_to "ユーザー情報","users" %></br>
   <P class= "user">
     <%= current_user.name %> さん
-    <%= link_to "ログアウト", :session,
-        method: :delete, data: { confirm: "ログアウトしますか?"} %>
+    <br><%= link_to "ログアウト", :session,
+        method: :delete, data: { confirm: "ログアウトしますか?"} %></br>
+  <% else %>
+  <br><%= render "shared/login_form" unless current_user %>
   </p>
   <% end %>
 </div>

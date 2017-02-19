@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :entries do
     collection { get "search" }
   end
-  resource :session
+  resource :session, only: [:create, :destroy]
   resources :users
 
   #テストテストテスト

@@ -8,7 +8,7 @@
 <table class="list" >
   <tr>
      <th> No.</th>
-     <th> 指標テンプレート</th>
+     <th> Price</th>
      <th> Commnet</th>
      <th> Date</th>
   </tr>
@@ -16,7 +16,7 @@
  <% @entries.each do |entry| %>
 <tr>
   <td style="text-align: right"><%= entry.entrynumber %></td>
-  <td style="text-align: right"><%= entry.scale_templatenumber %></td>
+  <td style="text-align: right"><%= entry.price %></td>
   <td style="text-align: right"><%= entry.comment %></td>
   <td style="text-align: right"><%= entry.entrydate %></td>
   <th>苦味</th>

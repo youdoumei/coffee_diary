@@ -44,11 +44,13 @@ class EntriesController < ApplicationController
 
   private
   def entry_params
-    atts = [:entrynumber, :scale_templatenumber, :comment, :entrydate, :value1, :value2, :value3, :value4]
+    atts = [:entrynumber, :price, :comment, :entrydate, :value1, :value2, :value3, :value4]
     atts << { image_attributes: [:_destroy, :id, :photo] }
     params.require(:entry).permit(atts)
   #picture_attributes
   end
+#20170223--植山
+#エントリーテーブルに列追加するときは、entry_paramsのカラム名を変更する必要がある。
 
 
-end
+#end

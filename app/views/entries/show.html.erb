@@ -1,0 +1,23 @@
+<% @page_title = "投稿" %>
+<h1><%= @page_title %></h1>
+
+<p><%= link_to "編集", [:edit, @entry] %></p>
+<table class="list" >
+  <tr>
+     <th> No.</th>
+     <th> Price</th>
+     <th> Commnet</th>
+     <th> Date</th>
+  </tr>
+  <tr>
+    <td><%= @entry.entrynumber %></td>
+    <td><%= @entry.price %></td>
+    <td><%= @entry.comment %></td>
+    <td><%= @entry.entrydate %></td>
+    <td><%= @entry.value1%></td>
+    <td><%= @entry.value2 %></td>
+    <td><%= @entry.value3 %></td>
+    <td><%= @entry.value4 %></td>
+    <td><%= image_tag @entry.image.try(:photo), class: 'img_size' %></td>
+  </tr>
+</table>

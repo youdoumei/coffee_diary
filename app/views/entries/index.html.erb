@@ -15,7 +15,8 @@
 <% end %>
  <% @entries.each do |entry| %>
 <tr>
-  <td style="text-align: right"><%= entry.entrynumber %></td>
+  <td style="text-align: right"><!---<%= entry.entrynumber %></d>-->
+  <td><%= link_to entry.entrynumber, entry %></td>
   <td style="text-align: right"><%= entry.price %></td>
   <td style="text-align: right"><%= entry.comment %></td>
   <td style="text-align: right"><%= entry.entrydate %></td>
@@ -36,6 +37,7 @@
 <!--- 追加箇所 終了-->
 <td>
   <%= link_to "編集", [:edit, entry] %>
-  <%= link_to "削除", entry, method: :delete, data: { confirm: "本当に削除しますか?"} %>
+  <%= link_to "削除", entry, method: :delete,
+        data: { confirm: "本当に削除しますか?"} %>
 </td>
 <% end %>

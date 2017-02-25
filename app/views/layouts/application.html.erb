@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title><%= page_title %></title>
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <!---ここの上の2行を消すとdestroyがうまくいかなくなる。詳細はRubyonRailsのp.154、256を参照  ログアウトも一緒-->
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all'%>
   </head>
   <body>
     <div id="sidebar">

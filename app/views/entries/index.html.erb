@@ -4,7 +4,7 @@
 <% end %>
 
 <h1><%= @page_title %></h1>
-
+<% end %>
 <table class="list" >
   <tr>
      <th> No.</th>
@@ -12,32 +12,26 @@
      <th> Commnet</th>
      <th> Date</th>
   </tr>
-<% end %>
- <% @entries.each do |entry| %>
-<tr>
-  <td style="text-align: right"><!---<%= entry.entrynumber %></d>-->
-  <td><%= link_to entry.entrynumber, entry %></td>
-  <td style="text-align: right"><%= entry.price %></td>
-  <td style="text-align: right"><%= entry.comment %></td>
-  <td style="text-align: right"><%= entry.entrydate %></td>
-  <th>苦味</th>
-  <td style="text-align: right"><%=entry.value1%></td>
-  <th>香り</th>
-  <td style="text-align: right"><%= entry.value2 %></td>
-  <th>酸味</th>
-  <td style="text-align: right"><%= entry.value3 %></td>
-  <th>コク</th>
-  <td style="text-align: right"><%= entry.value4 %></td>
-  <td style="text-align: right"><%= image_tag entry.image.try(:photo), class: 'img_size' %></td>
-<!---<p>
-   <strong>Image:</strong>
-    Modelのstyleで指定した :midium など渡すことでサイズを指定できる
-   <%#= image_tag entry.imagea %>
-</p>
-<!--- 追加箇所 終了-->
-<td>
-  <%= link_to "編集", [:edit, entry] %>
-  <%= link_to "削除", entry, method: :delete,
-        data: { confirm: "本当に削除しますか?"} %>
-</td>
-<% end %>
+  <% @entries.each do |entry| %>
+  <tr>
+    <td style="text-align: right"><!---<%= entry.entrynumber %></d>-->
+    <td><%= link_to entry.entrynumber, entry %></td>
+    <td style="text-align: right"><%= entry.price %></td>
+    <td style="text-align: right"><%= entry.comment %></td>
+    <td style="text-align: right"><%= entry.entrydate %></td>
+    <th>苦味</th>
+    <td style="text-align: right"><%=entry.value1%></td>
+    <th>香り</th>
+    <td style="text-align: right"><%= entry.value2 %></td>
+    <th>酸味</th>
+    <td style="text-align: right"><%= entry.value3 %></td>
+    <th>コク</th>
+    <td style="text-align: right"><%= entry.value4 %></td>
+    <td style="text-align: right"><%= image_tag entry.image.try(:photo), class: 'img_size' %></td>
+    <td>
+      <%= link_to "編集", [:edit, entry] %>
+      <%= link_to "削除", entry, method: :delete,data: { confirm: "本当に削除しますか?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>

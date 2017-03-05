@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   reconnect: false
   pool: 5
-  socket: /MySQL
+  socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
